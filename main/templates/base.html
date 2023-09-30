@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% block title %} {% endblock title %}| Helping Hand</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="Padam Singh" />
+	
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="static/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="static/css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="static/css/flexslider.css">
+
+	<!-- Pricing -->
+	<link rel="stylesheet" href="static/css/pricing.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="static/css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="static/js/respond.min.js"></script>
+	<![endif]-->
+<style>
+	
+</style>
+
+</head>
+
+<body>
+
+	<div class="fh5co-loader"></div>
+{% include 'messaging.html' %}
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-2">
+							<div id="fh5co-logo"><a href="/"><img src="static/logo/new logo.webp" alt=""
+										style="width: 250px;" alt="" srcset=""></a></div>
+						</div>
+						<div class="col-xs-10 text-right menu-1" style="padding: 20px; ">
+							<ul>
+								{% if user.is_superuser %}
+								<li><a class="nav-item nav-link" href="admin/" style="padding-left: 50px">Admin</a></li>
+									<li><a class="nav-item nav-link" href="{% url 'newsletter' %}">News letter</a></li>
+							{% endif %}
+
+								<li><a  href="/" style="padding-left: 25px;">Home</a></li>
+								<li><a  href="Service"  style="padding-left: 25px;">Services</a></li>
+								<li><a  href="Members"  style="padding-left: 25px;">Members</a></li>
+
+
+								<li class="has-dropdown">
+									<a  href="About"  style="padding-left: 25px;">About</a>
+									<ul class="dropdown">
+										<li><a href="About">Helping Hands</a></li>
+										<li><a href="OurTeams">Our Team</a></li>
+										<li><a href="PartnersCollaborators">Partners & Collaborators</a></li>
+									</ul>
+								</li>
+								<li><a  href="JoinUs"  style="padding-left: 25px;">Join Us</a></li>
+								<li><a  href="Contact"  style="padding-left: 25px;">Contact</a></li>
+								{% if user.is_authenticated %}
+								<li><a style="padding-left: 25px;"   class="nav-item nav-link" href="{% url 'logout' %}">
+                            			LogOut <i class="fas fa-sign-out-alt"></i>
+                        				</a></li>
+                    						{% else %}
+								<li><a style="padding-left: 25px;"  class="nav-item nav-link" href="{% url 'login' %}">
+                            			LogIn <i class="fas fa-sign-in-alt"></i>
+                        				</a></li>
+								<li><a style="padding-left: 25px;"   class="nav-item nav-link" href="{% url 'register' %}">
+                            			SignUp <i class="fas fa-user-plus"></i>
+                        				</a></li>
+                    			{% endif %}
+
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</nav>
+		{% block body %}{% endblock body %}
+		<div id="fh5co-gallery" class="fh5co-bg-section">
+			<div class="row text-center">
+				<h2><span>Instagram Gallery</span></h2>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-padded">
+					<a href="https://www.instagram.com/_.helping___hands/" class="gallery"
+						style="background-image: url(static/image/inst1.jpg);"></a>
+				</div>
+				<div class="col-md-3 col-padded">
+					<a href="https://www.instagram.com/_.helping___hands/" class="gallery"
+						style="background-image: url(static/image/inst2.jpg);"></a>
+				</div>
+				<div class="col-md-3 col-padded">
+					<a href="https://www.instagram.com/_.helping___hands/" class="gallery"
+						style="background-image: url(static/image/inst3.jpg);"></a>
+				</div>
+				<div class="col-md-3 col-padded">
+					<a href="https://www.instagram.com/_.helping___hands/" class="gallery"
+						style="background-image: url(static/image/inst4.jpg);"></a>
+				</div>
+			</div>
+		</div>
+		
+
+
+		
+							{% include 'footer.html' %}
+					
+
+
+
+		<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_4.jpg);">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-6 fh5co-widget">
+						<h3>About Education</h3>
+						<p>Our NGO empowers 9th and 10th-grade students with free books, nurturing their educational journey and fostering a brighter future.</p>
+							<h3>Social media handles</h3>
+							<div class="row" style="display:flex; margin-bottom:10px;">
+								<a href="https://www.instagram.com/_.helping___hands/">
+									<div style="margin-left: 20px; margin-right: 20px">
+									  <!-- Button 3 -->
+									  <!-- ... (your code for button 3) ... -->
+									  <button class="Btn">
+										<span class="svgContainer">
+										  <svg fill="white" class="svgIcon" viewBox="0 0 448 512" height="1.5em" xmlns="http://www.w3.org/2000/svg">
+											<path
+											  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+											</path>
+										  </svg>
+										</span>
+										<span class="BG-instagram"></span>
+									  </button>
+									</div>
+								  </a>
+
+								  <a href="https://www.facebook.com/HelpingHandsOfficaial/">
+									<div style="margin-left: 20px; margin-right: 20px">
+									  <!-- Button 1 -->
+									  <!-- ... (your code for button 1) ... -->
+									  <button class="Btn">
+										<span class="svgContainer">
+										  <svg fill="white" class="svgIcon" viewBox="0 0 320 512" height="1.5em" xmlns="http://www.w3.org/2000/svg">
+											<path
+											  d="M300 32H20C8.954 32 0 40.954 0 52v416c0 11.046 8.954 20 20 20h152V332h-44v-64h44V180c0-43.882 35.118-80 79-80h48v64h-36c-13.255 0-24 10.745-24 24v44h60.474l-8 64H268v148h52c11.046 0 20-8.954 20-20V52c0-11.046-8.954-20-20-20z" />
+										  </svg>
+										</span>
+										<span class="BG-facebook"></span>
+									  </button>
+									</div>
+								  </a>
+							</div>
+							
+							<div id="google_element"></div>
+							
+					</div>
+					
+					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+						<h3>Services</h3>
+						<ul class="fh5co-footer-links">
+							<li><a href="Service">Book's</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+						<h3>Our NGO</h3>
+						<ul class="fh5co-footer-links">
+							<li><a href="About">About</a></li>
+							<li><a href="Members">Members</a></li>
+							
+							<li><a href="OurTeams">Our Team</a></li>
+							<li><a href="PartnersCollaborators">Partners & Collaborators</a></li>
+							
+						</ul>
+					</div>
+
+					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+						<h3>For Contact</h3>
+						<ul class="fh5co-footer-links">
+							<li><a href="JoinUs">Join Us</a></li>
+								<li><a href="Contact">Contact</a></li>
+							
+						</ul>
+					</div>
+
+					
+				</div>
+<!-- Translate -->
+
+<script src="static/js/respond.min.js"></script>
+<script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+function loadGoogleTranslate(){
+new google.translate.TranslateElement(
+"google_element");
+}
+</script>
+
+				<div class="row copyright">
+					<div class="col-md-12 text-center">
+						<p>
+							<small class="block">&copy; 2023 Helping Hands. All Rights Reserved.</small>
+							
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<!-- jQuery -->
+	<script src="static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="static/js/jquery.stellar.min.js"></script>
+	<!-- Carousel -->
+	<script src="static/js/owl.carousel.min.js"></script>
+	<!-- Flexslider -->
+	<script src="static/js/jquery.flexslider-min.js"></script>
+	<!-- countTo -->
+	<script src="static/js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="static/js/jquery.magnific-popup.min.js"></script>
+	<script src="static/js/magnific-popup-options.js"></script>
+	<!-- Count Down -->
+	<script src="static/js/simplyCountdown.js"></script>
+	<!-- Main -->
+	<script src="static/js/main.js"></script>
+	<script>
+		var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+
+		// default example
+		simplyCountdown('.simply-countdown-one', {
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate()
+		});
+
+		//jQuery example
+		$('#simply-countdown-losange').simplyCountdown({
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate(),
+			enableUtc: false
+		});
+	</script>
+</body>
+
+</html>

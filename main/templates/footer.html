@@ -1,0 +1,51 @@
+{% if not user.is_authenticated %}
+<div id="fh5co-counter" class="fh5co-counters" style="background-image: url(static/image/slide5.jpeg);"
+			data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2 style="color: white;">Subscribe for our newsletter</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="row">
+<footer class="footer-color text-center footer-text">
+    
+        
+            <section class="">
+                {% comment %} <h2 style="color: white;">Subscribe for our newsletter</h2> {% endcomment %}
+                <form action="{% url 'subscribe' %}" method="POST">
+                    <div class="row justify-content-center">
+                    {% csrf_token %}
+						<div class="row form-group">
+							<div class="col-md-4">
+								<!-- <label for="firstname">First Name</label> -->
+								<input required="" name="name" type="text" id="firstname" class="form-control" placeholder="Your Name">
+							</div>
+							<div class="col-md-6">
+								<!-- <label for="email">Email</label> -->
+								<input required="" name="email" type="text" id="email" class="form-control" placeholder="Your Email Address">
+							</div>
+								
+
+                            <div class="form-group my-2">
+                                <input type="submit" value="Subscribe" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+      
+        
+
+    </div>
+    
+</footer>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endif %}

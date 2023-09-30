@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsLetter</title>
+  <!-- Link Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .form-group input:hover {
+      border-color: #007bff; /* Change border color on hover */
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow */
+  }
+  
+  </style>
+</head>
+<body>
+  {% include 'messaging.html' %}
+  <div class="container-fluid row p-0 m-0" style="height: 710px;">
+
+    <div class="col-md-4 video-container" style="background-image: url(/static/image/slide2.png); background-size: cover; ">
+      {% comment %} <img src="static/logo/new logo.webp" alt="Logo" class="logo" style="width: 250px;"> {% endcomment %}
+      
+      <p style="position: absolute; z-index: 1; left: 40px; margin-top: 650px; font-size:medium; color: white;">@helpinghand</p>
+      <video autoplay loop muted class="video">
+        {% comment %} <source src="static/video/video2.mp4" type="video/mp4"> {% endcomment %}
+      </video>
+    </div>
+    <div class="col-md-8 registration-form" style="background-image: url(/static/image/bgformain1.jpeg); background-size: cover;">
+      <div id="validationAlerts"></div>
+            <div class="col-md-6">
+              <form method="POST" class="needs-validation" novalidate>
+                <h2 class="text-center" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom: -5px;">NewsLetter</h2>
+            
+                <p class="message">Send email to every subscribers.</p>
+            
+                {% csrf_token %}
+                
+                <div class="mb-3 form-group">
+                    <label for="{{ form.subject.id_for_label }}" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="{{ form.subject.id_for_label }}" name="{{ form.subject.name }}" placeholder="Enter subject" required>
+                    <div class="invalid-feedback">
+                        Please enter a subject.
+                    </div>
+                </div>
+                
+                <div class="mb-3 form-group">
+                    <label for="{{ form.receivers.id_for_label }}" class="form-label">Receivers</label>
+                    <input type="text" class="form-control {{ form.receivers }}
+                    <div class="invalid-feedback">
+                        Please enter receivers.
+                    </div>
+                </div>
+                
+                <div class="mb-3 form-group">
+                    <label for="{{ form.message.id_for_label }}" class="form-label">Message</label>
+                    <textarea class="form-control" id="{{ form.message.id_for_label }}" name="{{ form.message.name }}" placeholder="Enter your message" required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter a message.
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
+                
+            </div>
+       
+    </div>
+
+  </div>
+
+  
+  
+  
+  
+  
+  <!-- Link Bootstrap JS (jQuery and Popper.js are required) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
