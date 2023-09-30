@@ -3,6 +3,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+
+admin.site.site_header = "Helping Hands Admin"
+admin.site.site_title = "Helping Hands Admin Portal"
+admin.site.index_title = "Welcome to Helping Hands Researcher Portal"
+
 urlpatterns = [
     path("", include('users.urls')),
     path("", include('main.urls')),
