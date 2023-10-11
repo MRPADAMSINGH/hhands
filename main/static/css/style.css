@@ -19,6 +19,8 @@ body {
   background: #fff;
   overflow-x: hidden;
   user-select: none;
+  left:0;
+  right:0;
 }
 
 #page {
