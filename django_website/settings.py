@@ -89,14 +89,25 @@ WSGI_APPLICATION = 'django_website.wsgi.application'
 # }
 
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'railway',
+#        'USER': 'postgres',
+#        'PASSWORD': 'X3RqyPQxlzLwwJQAoVud',
+#        'HOST': 'containers-us-west-170.railway.app',
+#        'PORT': '7168',
+#    }
+# }
+
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'railway',
-       'USER': 'postgres',
-       'PASSWORD': 'X3RqyPQxlzLwwJQAoVud',
-       'HOST': 'containers-us-west-170.railway.app',
-       'PORT': '7168',
+       'NAME': 'verceldb',
+       'USER': 'default',
+       'PASSWORD': 'gDM19ACzhjLb',
+       'HOST': 'ep-blue-brook-90457326-pooler.us-east-1.postgres.vercel-storage.com',
+       'PORT': '5432',
    }
 }
 
