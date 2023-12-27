@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>{% block title %} {% endblock title %}| Helping Hand</title>
+	<title>{% block title %} {% endblock title %}| Helping Hands</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -81,7 +81,8 @@
 
 								<li><a  href="/" style="padding-left: 25px;">Home</a></li>
 								<li><a  href="Service"  style="padding-left: 25px;">Services</a></li>
-								<li><a  href="Members"  style="padding-left: 25px;">Members</a></li>
+								<li><a  href="JoinUs"  style="padding-left: 25px;">Join Us</a></li>
+								<li><a  href="Members"  style="padding-left: 25px;">Volunteers</a></li>
 
 
 								<li class="has-dropdown">
@@ -92,7 +93,7 @@
 										<li><a href="PartnersCollaborators">Partners & Collaborators</a></li>
 									</ul>
 								</li>
-								<li><a  href="JoinUs"  style="padding-left: 25px;">Join Us</a></li>
+								
 								<li><a  href="Contact"  style="padding-left: 25px;">Contact</a></li>
 								{% if user.is_authenticated %}
 								<li><a style="padding-left: 25px;"   class="nav-item nav-link" href="{% url 'logout' %}">
@@ -205,10 +206,10 @@
 						<h3>Our NGO</h3>
 						<ul class="fh5co-footer-links">
 							<li><a href="About">About</a></li>
-							<li><a href="Members">Members</a></li>
+							<li><a href="Members">Volunteers</a></li>
 							
-							<li><a href="Our Teams">Our Team</a></li>
-							<li><a href="Partners Collaborators">Partners & Collaborators</a></li>
+							<li><a href="OurTeams">Our Team</a></li>
+							<li><a href="PartnersCollaborators">Partners & Collaborators</a></li>
 							
 						</ul>
 					</div>
@@ -216,7 +217,7 @@
 					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
 						<h3>For Contact</h3>
 						<ul class="fh5co-footer-links">
-							<li><a href="Join Us">Join Us</a></li>
+							<li><a href="JoinUs">Join Us</a></li>
 								<li><a href="Contact">Contact</a></li>
 							
 						</ul>
@@ -288,6 +289,7 @@ new google.translate.TranslateElement(
 	<script src="static/js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="static/js/main.js"></script>
+	
 	<script>
 		var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
