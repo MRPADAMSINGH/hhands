@@ -248,9 +248,22 @@ new google.translate.TranslateElement(
 		</footer>
 	</div>
 
-	<div class="gototop js-top">
+	<div class="gototop js-top" style="margin-bottom: 80px; background-color:black;"></a>
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
+	<script>
+		window.watsonAssistantChatOptions = {
+		  integrationID: "17cc2066-1393-4b7c-96a2-ca95d80b8f72", // The ID of this integration.
+		  region: "au-syd", // The region your integration is hosted in.
+		  serviceInstanceID: "b6776bac-b6ba-4d7b-9f15-9cced5b2de88", // The ID of your service instance.
+		  onLoad: async (instance) => { await instance.render(); }
+		};
+		setTimeout(function(){
+		  const t=document.createElement('script');
+		  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+		  document.head.appendChild(t);
+		});
+	  </script>
 	<script src="https://www.google.com/recaptcha/api.js"></script>
 	<!-- jQuery -->
 	<script src="static/js/jquery.min.js"></script>
